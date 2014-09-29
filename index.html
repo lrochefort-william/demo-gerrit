@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Introducion to Gerrit</title>
+	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./static/css/main.css" type="text/css">
+</head>
+<body>
+	<header>
+		<div class="title">
+			<h1>Welcome to your introduction to Gerrit</h1>
+		</div>
+	</header>
+	<div class="main">
+		<div class="logo">
+			<img src="./static/img/logo.png" alt="Gerrit logo">
+		</div>
+		<div class="intro">
+			<p>This is a small introduction to <strong>Gerrit</strong>, a web-based code review tool built on top of the git version control system.</p>
+			<p>Why do code review?</p>
+			<p><strong>It has a lot of disadvantages:</strong></p>
+			<ul>
+				<li><strong>It makes you look dumb. </strong>Peer reviews and comments ARE meant to humiliate you in front of the whole team.</li>
+				<li><strong>It decreases productivity of each developer, </strong>since further work on the submitted code is impossible until a successful review, and takes even longer if multiple reviewers are involved.</li>
+				<li>After successfully passing a review, <strong>the developer could commit a different piece of code</strong>, by mistake or otherwise</li>
+				<li><strong>Code review costs a lot of money. </strong>It's not worth of the actual return on this kind of investment.</li>
+				<li><strong>Each time you do code review, an innocent kitten dies. </strong> It's a fact...</li>
+			</ul>
+			<p><strong>But it has many advantages, like:</strong></p>
+			<ul>
+				<li><strong>Finding bugs early, </strong>when they are cheap to fix.</li>
+				<li><strong>Coding standards compliance. </strong>Code review helps to maintain consistent coding style across the company.</li>
+				<li><strong>Teaching and sharing knowledgeConsistent design and implementation. </strong>During review team members gain better understanding of the code base and learn from each other.</li>
+				<li><strong>Consistent design and implementation. </strong>Peer review helps to maintain a level of consistency in software design and implementation.</li>
+				<li><strong>Higher software security. </strong>Applications that require a high level of security benefit from targeted security reviews.</li>
+				<li><strong>Team cohesion. </strong>Review discussions save team members from isolation and bring them closer to each other.</li>
+				<li><strong>Confidence of stakeholders. </strong>You build confidence of stakeholders about the technical quality of the execution.</li>
+			</ul>
+		</div>
+		<div class="diagram">
+			<h2>Typical repository representation</h2>
+			<img src="./static/img/central-repo.png" alt="Central Repo">
+			<p>This is a typical representation of a central git repository.</p>
+			<p>Any team with more than one member has a central source repository of some kind (or they should). Git can theoretically work without such a central location but in practice there is usually a central repository. This serves as the authoritative copy of what is actually in the project. This is what everyone fetches from and pushes to and is generally where build servers and other such tools get the source from.</p>
+			<h2>Gerrit repository representation</h2>
+			<img src="./static/img/central-gerrit.png" alt="Central Gerrit">
+			<p><strong>Gerrit</strong> is deployed in place of this central repository and adds an additional concept, a store of pending changes. Everyone still fetches from the authoritative repository but instead of pushing back to it, they push to this pending changes location. A change can only be submitted into the authoritative repository and become an accepted part of the project once the change has been reviewed and approved.</p>
+			<p>Like any repository hosting solution, <strong>Gerrit</strong> has a powerful access control model. Users can even be granted access to push directly into the central repository, bypassing code review entirely. <strong>Gerrit</strong> can even be used without code review, used simply to host the repositories and controlling access. But generally it’s just simpler and safer to go through the review process even for users who are allowed to directly push.</p>
+		</div>
+
+		<div class="repolocation">
+			<p>Demo repository location:</p>
+			<code>git clone https://github.com/lrochefort-william/demo-gerrit.git</code>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+html, body{
+	font-family: Roboto, sans-serif;	
+}
+.title, .diagram h2{
+	text-align: center;
+}
+.logo img, .diagram img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+header, .main{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
